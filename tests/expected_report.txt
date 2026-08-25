@@ -1,0 +1,151 @@
+==========================================================================
+LEDGER REPLAY, DAY 1 TO DAY 6
+==========================================================================
+
+Balances shown per day are as known at the end of that day. When a later event
+changes an earlier day, it is reported as a restatement on the day it became
+known. The final restated position appears at the end.
+
+==========================================================================
+DAY 1
+==========================================================================
+
+  ACC-001  AED
+    closing balance                                             250.00
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+
+  ACC-002  BHD
+    closing balance                                              0.000
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+
+==========================================================================
+DAY 2
+==========================================================================
+
+  ACC-001  AED
+    closing balance                                             250.00
+    fees assessed today                                           none
+    authorisations
+      Auth-A   active, held 200.00
+    errors                                                        none
+
+  ACC-002  BHD
+    closing balance                                              0.000
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+
+==========================================================================
+DAY 3
+==========================================================================
+
+  ACC-001  AED
+    closing balance                                             650.00
+    fees assessed today                                           none
+    authorisations
+      Auth-A   active, held 200.00
+    errors                                                        none
+
+  ACC-002  BHD
+    closing balance                                              0.000
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+
+==========================================================================
+DAY 4
+==========================================================================
+
+  ACC-001  AED
+    closing balance                                             465.00
+    fees assessed today                                           none
+    authorisations
+      Auth-A   settled, held 0.00
+    errors
+      E6   settlement refers to Auth-Z, which was never authorised. 180.00 does not leave the account.
+
+  ACC-002  BHD
+    closing balance                                              0.000
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+
+==========================================================================
+DAY 5
+==========================================================================
+
+  ACC-001  AED
+    closing balance                                            -230.00
+    restated by events that arrived today
+      Day 2   250.00  becomes  -395.00
+      Day 3   650.00  becomes  5.00
+      Day 4   465.00  becomes  -205.00
+    fees assessed today
+      overdraft fee -25.00   effective Day 2
+      overdraft fee -25.00   effective Day 4
+      overdraft fee -25.00   effective Day 5
+    authorisations
+      Auth-A   settled, held 0.00
+      Auth-B   declined, available -155.00 would fall to -245.00 once a hold of 90.00 is applied
+    errors                                                        none
+
+  ACC-002  BHD
+    closing balance                                             10.000
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+
+==========================================================================
+DAY 6
+==========================================================================
+
+  ACC-001  AED
+    closing balance                                             390.92
+    restated by events that arrived today
+      Day 2   -395.00  becomes  225.00
+      Day 3   5.00  becomes  625.00
+      Day 4   -205.00  becomes  415.00
+      Day 5   -230.00  becomes  390.00
+    fees assessed today                                           none
+    authorisations
+      Auth-A   settled, held 0.00
+    errors                                                        none
+    interest capitalised today
+      daily accruals   0.10  0.09  0.25  0.17  0.15  0.16
+      credited as a single entry of 0.92
+
+  ACC-002  BHD
+    closing balance                                             10.008
+    fees assessed today                                           none
+    authorisations                                                none
+    errors                                                        none
+    interest capitalised today
+      daily accruals   0.000  0.000  0.000  0.000  0.004  0.004
+      credited as a single entry of 0.008
+
+==========================================================================
+FINAL RESTATED POSITION
+==========================================================================
+
+    Every day's closing balance as it stands once all ten events are in.
+
+  ACC-001  AED
+      Day 1          250.00
+      Day 2          225.00
+      Day 3          625.00
+      Day 4          415.00
+      Day 5          390.00
+      Day 6          390.92
+
+  ACC-002  BHD
+      Day 1           0.000
+      Day 2           0.000
+      Day 3           0.000
+      Day 4           0.000
+      Day 5          10.000
+      Day 6          10.008
+
